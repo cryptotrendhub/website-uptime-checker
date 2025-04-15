@@ -1,1 +1,46 @@
+name: Website Uptime Checker
+
+on:
+  push:
+    branches:
+      - main  # You can specify any branch, like 'main' or 'master'
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'  # Runs the action daily at midnight UTC
+
+jobs:
+  uptime-check:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Python
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Step 4: Run the uptime checker script
+      - name: Run uptime checker
+        run: |
+          python uptime_checker_pro.py -f websites.csv
+
+      # Step 5: Upload logs as artifacts (optional)
+      - name: Upload logs
+        uses: actions/upload-artifact@v2
+        with:
+          name: uptime_logs
+          path: |
+            uptime_log.txt
+            error_log.txt
 
