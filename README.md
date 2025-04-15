@@ -1,16 +1,27 @@
-# 🌐 Website Uptime Checker
+# 🌐 Website Uptime Checker Pro
 
-A simple Python script to check whether a website is **UP** or **DOWN**. Perfect tool for developers, freelancers, and website owners to monitor website health easily.
+A powerful Python-based tool to monitor website uptime with logging, error handling, retry mechanism, CSV support, and colored CLI output — built for developers, freelancers, and sysadmins. 🚀
 
-## 🚀 Features
-- Checks the status of any website.
-- Displays HTTP response code.
-- Easy to use – beginner-friendly Python script.
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)
+
+---
+
+## ✨ Features
+
+- ✅ Check single or multiple websites (via CSV)
+- ⏱️ Response time tracking
+- ♻️ Automatic retries on failure
+- 📁 Logs results and errors separately
+- 🌈 Colored terminal output
+- 📄 Clean code with comments
+- 🎯 Beginner to Pro-level script
+
+---
 
 ## 📦 Requirements
-- Python 3.x
-- `requests` library
 
-Install with:
+Install required packages using:
+
 ```bash
-pip install requests
+pip install requests colorama
